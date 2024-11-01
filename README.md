@@ -1,4 +1,4 @@
-![alt text](readme/header.jpg "RepoToText for notebookLM")
+![alt text](readme/header_medium.jpg "RepoToText for notebookLM")
 
 # Repo To Text
 
