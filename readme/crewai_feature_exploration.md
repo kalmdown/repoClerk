@@ -7,28 +7,32 @@ Can you provide a feature exploration guide for this codebase? Outline any optio
 
 **Gemini Response**
 
-Here is a feature exploration guide for the CrewAI codebase, outlining optional features and functionalities:
-Optional Features and Functionalities in CrewAI
-●
-Customizable System Prompts and Templates: The Task class allows for optional system prompts and templates to be defined. You can provide a system_template, prompt_template, and response_template to tailor the agent's behavior and output formatting. For example:
-●
-This allows for more control over the interaction between the agent and the task, potentially leading to more accurate and consistent results.
-●
-Customizable Configurations for Tools: Many of the RAG tools in CrewAI allow for customizable configurations using a config dictionary. This enables you to select different language models (LLMs) for embeddings and summarization based on your needs. For example:
-●
-You can experiment with different LLMs and embeddings to fine-tune the performance of the RAG tools.
-●
-Caching: The Task class includes an optional cache parameter. Setting this to True enables caching of the task's output. This can be useful for tasks that are computationally expensive or that retrieve information that is unlikely to change frequently. By caching the results, you can speed up subsequent runs of the task.
-●
-Code Execution: The Task class also supports code execution through the allow_code_execution parameter. Setting this to True allows agents to execute Python code. This feature opens up possibilities for automating complex tasks that involve data manipulation, API interactions, or other programmatic actions. However, it's essential to use this feature cautiously and ensure that the code being executed is safe and reliable.
-●
-Error Handling and Retries: Agents have a max_retry_limit parameter, which defines the number of times an agent will retry a task if it encounters an error. This can improve the robustness of your crew's execution by handling transient errors and allowing agents to persist in completing their tasks.
-●
-Context Window Management: Agents in CrewAI have options for managing the context window, which refers to the amount of past conversation history that is provided to the LLM. The respect_context_window parameter allows you to specify whether the agent should take the context window into account when generating responses.
-●
-Planning Capability: The Crew class offers a planning parameter that enables planning before crew execution. If set to True, a plan is generated and added to the crew, which can be useful for complex workflows involving multiple agents and tasks. The planning_llm parameter allows customization of the LLM used for planning, giving you more control over the planning process.
-●
-Telemetry: CrewAI uses anonymous telemetry to collect usage data to help improve the library. This data includes information about tool usage, agent roles, and language models used. The collected data helps developers understand user behavior and focus on the most impactful features. It also contributes to improving support for the most-used languages and building better integrations and tools. The share_crew feature, when enabled, collects more detailed data to provide deeper insights. The wiki does not specify how to enable or disable this feature, so you might need to investigate the source code.
-●
-Experimental Tools: The sources describe a few tools in experimental phases, such as the WebsiteSearchTool and the CodeDocsSearchTool. These tools are under active development and might have unexpected behavior or changes in the future. However, experimenting with these tools can give you a glimpse into the future direction of CrewAI and help you explore innovative use cases.
-This feature exploration guide is not exhaustive, as the codebase is constantly evolving. However, it should provide a good starting point for understanding the optional features and hidden functionalities within CrewAI. By experimenting with these features and keeping up-to-date with the latest developments, you can leverage CrewAI's full potential to build sophisticated AI-powered agents and workflows.
+Here is a guide for exploring optional or hidden features in this codebase, based on the provided source code snippets. 
+
+### Feature Exploration Guide:
+
+*   **Telemetry for Feature Prioritization and Improvement:** CrewAI incorporates an anonymous telemetry system to gather usage data. This data aids in understanding user behavior, feature adoption, and areas needing improvement. 
+
+    *   **Purpose:** Guide development efforts, identify popular features, understand usage patterns, and optimize resource allocation.
+    *   **Examples:** Track agent memory and delegation usage, parallel vs. sequential task execution, and language model preferences to inform future development and support.
+*   **`share_crew` Feature for Enhanced Insights:** An opt-in feature called `share_crew` allows users to share more detailed usage data with CrewAI, including task descriptions and agent attributes. 
+    *   **Purpose:** Provide richer insights into how CrewAI is used, enabling more targeted improvements and a deeper understanding of user workflows.
+    *   **Examples:** Help CrewAI identify common use cases, design better tools and integrations, and create more relevant examples and documentation.
+*   **Experimental RAG Search Tools:** Several Retrieval-Augmented Generation (RAG) search tools, still in experimental stages, offer specialized search capabilities for different data sources. 
+    *   **Purpose:** Enable agents to access and extract information from various sources, enhancing their research and decision-making abilities.
+    *   **Examples:** The `WebsiteSearchTool` performs semantic searches on websites. The `CodeDocsSearchTool` searches code documentation, while the `JSONSearchTool` focuses on searching within JSON file contents.  The `MDXSearchTool` extracts information from MD files using query-based searches, and the `PGSearchTool` queries PostgreSQL databases.
+*   **Custom Model and Embeddings Configuration:** Many tools allow customization of the underlying language model (LLM) and embedding models used for processing and analysis. 
+    *   **Purpose:** Cater to specific performance, accuracy, or cost requirements by selecting different providers (OpenAI, Google, Ollama, etc.) and model configurations.
+    *   **Examples:** Configure an LLM with specific parameters like temperature, top_p, and streaming for text generation, or select a specialized embedding model from a specific provider.
+*   **Advanced Tool Parameters for Fine-grained Control:**  Tools offer optional parameters for customizing their behavior beyond basic functionality. 
+    *   **Purpose:** Enhance flexibility, enable advanced use cases, and handle specific scenarios more effectively.
+    *   **Examples:** The `SeleniumScrapingTool` includes options like `cookie` for simulating logged-in sessions and `wait_time` for handling dynamic content on websites.
+*   **Crew Configuration Options:**  The `Crew` class supports various configuration options that affect the overall crew execution. 
+    *   **Purpose:** Control aspects like execution process (sequential or parallel), logging, planning, maximum requests per minute, and the use of prompt files.
+    *   **Examples:** Set `planning` to `True` to enable automatic planning of crew execution. Define a `max_rpm` limit to control the rate of requests during execution.
+*   **Task-Specific Tool Limiting:** When defining a `Task`, you can provide a list of `tools` that the agent assigned to the task is allowed to use.
+    *   **Purpose:**  Restrict an agent's access to tools within the context of a particular task, enhancing security and control.
+    *   **Examples:** If an agent has access to both a web search tool and a database tool, you can limit it to only using the database tool for a specific task that involves internal data analysis.
+
+Please note that the information provided in this guide is based solely on the source code snippets you provided.  Further investigation of the full codebase may reveal additional features and functionalities.  It is always recommended to refer to the complete codebase and documentation for a comprehensive understanding of the software's capabilities. 
+
