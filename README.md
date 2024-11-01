@@ -2,9 +2,9 @@
 
 # Repo To Text
 
-This repository contains a *Python* script designed to process a local GitHub repository by concatenating the contents of its files into text files, with a specified word limit per file. The script is useful for creating a consolidated view of a repository's content while excluding certain directories and file types.
+This repository contains a *Python* script (1repo_to_text.py`) designed to process a local GitHub repository by concatenating the content of its files into text files, with a specified word limit per file. The script creates a consolidated view of a repository's content while excluding certain directories and file types.
 
-You can upload these files to [Google NotebookLM](https://notebooklm.google/) to interact with the code and ask questions about implementations and other details.
+Once the text files generated, you can upload them to your notebook [Google NotebookLM](https://notebooklm.google/), and start interacting with the code and asking questions about implementations and other details.
 
 ## Features
 
@@ -13,11 +13,6 @@ You can upload these files to [Google NotebookLM](https://notebooklm.google/) to
 - Concatenates file contents into text files with a maximum word limit.
 - Outputs the processed content into numbered text files.
 - Provides command-line options for customization.
-
-## Requirements
-
-- Python 3.x
-- NLTK library
 
 ## Installation
 
@@ -49,31 +44,32 @@ python repo_to_text.py --cfg <path -to-config-yaml-file> --repo_path <path-to-re
 - `--skip_dirs`: Additional directories to skip.
 - `-v`, `--verbose`: Enable verbose output.
 
-### Example
+here is a long example:
 
 ```bash
 python repo_concat.py --repo_path ./my_repo -w 100000 -o ./output --skip_patterns ".md" ".txt" --skip_dirs "tests" -v
 ```
 
 
-## Use case: discussion with the crewAI repo
+## Use case example: discussion with the crewAI repo
 
-1. `git clone https://github.com/crewAIInc/crewAI.git`
-2. run text repoTotext code: `python repo_to_text.py --cfg config.yaml --repo_path repos/crewai`
+1. Clone repo: `git clone https://github.com/crewAIInc/crewAI.git`
+2. run text repoTotext code on the repo dir: `python repo_to_text.py --cfg config.yaml --repo_path repos/crewai`
 3. Upload the files to **NotebookLM** [https://notebooklm.google.com/](https://notebooklm.google.com/)
 
-You are now ready to talk with the repo. Here are a few example of interactions nd response from NotebookLM
+You are now ready to talk with the repo. Here are a few examples of interactions with NotebookLM
 
 ### Example1: Code implementation query
 
 <details open>
 <summary> Prompt / Response </summary>
-**prompt**
+
+**User Prompt**
 
 Implement a random example of a crew of agents.
 
 
-**response**
+**Gemini Response**
 
 Here is an example of a simple crew of agents, drawn from the provided sources:
 
@@ -168,12 +164,12 @@ This example showcases the fundamental structure of creating a simple crew using
 <details open>
 <summary>Prompt / Response </summary>
 
-**prompt**
+**User Prompt**
 
 I want each agent within my multi-agent setup to log their individual token usage during interactions. How can I implement this functionality to monitor and print each agent's token usage after every interaction? Additionally, where in the existing code should this feature be integrated for optimal tracking and minimal performance impact? Please provide guidance on which methods or modules would be most appropriate to modify or extend to capture token usage data effectively.
 
 
-**response**
+**Gemini Response**
 
 ## Tracking Token Usage for Individual Agents in CrewAI
 
