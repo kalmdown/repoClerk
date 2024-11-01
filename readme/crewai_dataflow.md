@@ -1,9 +1,11 @@
-```prompt
+**User Prompt**
+
 describe how data flows between functions or modules, providing an overview of the transformations data undergoes throughout the codebase. Understanding data flow can be crucial for learning how to use a repository effectively, especially in data-intensive application
-```
 
+---
 
-```response
+**Gemini Response**
+
 ## Data Flow in CrewAI: A Journey Through Agents, Tasks, and Tools
 
 The sources primarily focus on outlining features and concepts within the CrewAI framework, with less emphasis on explicitly describing the flow of data between functions and modules. Based on the information available, the following insights can be drawn regarding data flow:
@@ -59,4 +61,3 @@ While not explicitly described, the sources mention features like `plot` and `pl
 - **Debug and Step Through Execution:**  Utilizing debugging tools can provide valuable insights into the data structures and transformations at different stages of execution.
 
 Understanding data flow is indeed crucial for effectively utilizing any codebase, especially in data-intensive applications. While the provided sources offer a valuable introduction to CrewAI, further exploration and experimentation are recommended to gain a deeper understanding of the data manipulation intricacies within the framework.
-```

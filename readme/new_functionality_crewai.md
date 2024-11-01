@@ -1,8 +1,11 @@
-```prompt
-I want each agent within my multi-agent setup to log their individual token usage during interactions. How can I implement this functionality to monitor and print each agent's token usage after every interaction? Additionally, where in the existing code should this feature be integrated for optimal tracking and minimal performance impact? Please provide guidance on which methods or modules would be most appropriate to modify or extend to capture token usage data effectively.
-```
+**User Prompt**
 
-```response
+I want each agent within my multi-agent setup to log their individual token usage during interactions. How can I implement this functionality to monitor and print each agent's token usage after every interaction? Additionally, where in the existing code should this feature be integrated for optimal tracking and minimal performance impact? Please provide guidance on which methods or modules would be most appropriate to modify or extend to capture token usage data effectively.
+
+---
+
+**Gemini Response**
+
 ## Tracking Token Usage for Individual Agents in CrewAI
 
 While the sources don't explicitly outline how to print the token usage of each agent individually, they do provide insights into how token usage is tracked and accessed within the CrewAI framework. Based on this information, we can devise a potential implementation strategy.
@@ -65,4 +68,3 @@ for agent in crew.agents:
 - The `TokenCalcHandler` class ([Source 2]) is used as a callback to track token usage during agent execution. This highlights how CrewAI integrates token tracking into its execution pipeline.
 
 By combining the insights from the sources and the proposed implementation strategy, you should be able to enhance the CrewAI framework to provide more granular visibility into agent-level token usage, allowing for better resource monitoring and optimization. 
-```

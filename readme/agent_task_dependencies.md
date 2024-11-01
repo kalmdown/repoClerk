@@ -1,9 +1,11 @@
-```prompt
+**User Prompt**
+
 Can you provide a detailed breakdown of the dependencies between the agent and task modules in the CrewAI framework? Include specific function calls, methods, or data structures where agent relies on task for execution. Also, list any parameter exchanges or direct references in the code, and if possible, provide code snippets that illustrate these dependencies.
-```
 
+---
 
-```response
+**Gemini Response**
+
 ## Agent-Task Dependencies: A Deep Dive into CrewAI
 
 The sources illuminate the intricate relationship between agents and tasks in the CrewAI framework. Here's an expanded examination of these dependencies, highlighting specific function calls, methods, data structures, and code examples:
@@ -105,4 +107,3 @@ crew.kickoff()
 In this scenario, the `writing_task` explicitly depends on the output of the `research_task`, demonstrating the data flow and dependency between tasks and agents.
 
 The sources provide valuable insights into how agents and tasks interact within the CrewAI framework. The dependencies, function calls, and data structures described above illustrate the carefully designed interplay between these modules.
-```

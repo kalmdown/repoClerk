@@ -1,9 +1,12 @@
-```prompt
+**User Prompt**
+
 Implement a random example of a crew of agents.
-```
 
 
-```response
+---
+
+**Gemini Response**
+
 Here is an example of a simple crew of agents, drawn from the provided sources:
 
 *   The example uses the `crewai` framework, specifically demonstrating how to create a basic crew with two agents: a `researcher` and a `writer`.
@@ -85,4 +88,3 @@ print(result)
 ```
 
 This example showcases the fundamental structure of creating a simple crew using the `crewai` framework. By defining roles, goals, and tasks for each agent, and configuring the `Crew` object, you can establish a basic multi-agent system for task automation.
-```

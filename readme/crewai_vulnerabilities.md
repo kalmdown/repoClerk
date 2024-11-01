@@ -1,8 +1,11 @@
-```prompt
-Can you analyze this codebase for any security vulnerabilities that I should address before deploying? Specifically, look for risks related to code injection, inadequate access control, improper data handling, dependency vulnerabilities, and any other common security issues in repositories. Provide examples of code sections or functions that might need security improvements, along with recommendations for mitigating these risks.
-```
+**User Prompt**
 
-```response
+Can you analyze this codebase for any security vulnerabilities that I should address before deploying? Specifically, look for risks related to code injection, inadequate access control, improper data handling, dependency vulnerabilities, and any other common security issues in repositories. Provide examples of code sections or functions that might need security improvements, along with recommendations for mitigating these risks.
+
+---
+
+**Gemini Response**
+
 Here's an analysis of the codebase for security vulnerabilities:
 
 ### Code Injection Risks
@@ -39,5 +42,4 @@ Here's an analysis of the codebase for security vulnerabilities:
 
 *   **Telemetry data is collected by CrewAI, including tool usage and agent roles.** While this data is anonymous, users should be aware of this data collection.
 
-By addressing these potential security concerns, you can significantly enhance the security posture of your CrewAI application before deployment. 
-```
+By addressing these potential security concerns, you can significantly enhance the security posture of your CrewAI application before deployment.

@@ -1,7 +1,11 @@
-```prompt
-Can you suggest an onboarding path for beginners or new team members to understand and work with this repository? Focus on the essential modules, functions, and dependencies, and provide clear learning steps with goals for each stage. Include specific code examples, key methods to explore, and practical checkpoints where they can test their understanding. If possible, suggest a small project or exercise for hands-on practice using the core functionalities.```
+**User Prompt**
 
-```Response
+Can you suggest an onboarding path for beginners or new team members to understand and work with this repository? Focus on the essential modules, functions, and dependencies, and provide clear learning steps with goals for each stage. Include specific code examples, key methods to explore, and practical checkpoints where they can test their understanding. If possible, suggest a small project or exercise for hands-on practice using the core functionalities.
+
+---
+
+**Gemini Response**
+
 Here is a suggested onboarding path for beginners to understand and work with the CrewAI repository:
 
 ## **Stage 1: Setting Up and Understanding Core Concepts**
@@ -87,5 +91,4 @@ To solidify your understanding, consider building a "Content Creation Crew" as a
 
 *   This project allows you to practice defining agents, tasks, and crews, integrating various tools, and potentially exploring memory and training to enhance the content creation process.
 
-This onboarding path aims to provide a structured approach for beginners to learn and contribute to CrewAI. The stages are designed to progressively build upon your understanding and practical skills. Feel free to adapt this path based on your learning style and specific interests within the CrewAI framework. 
-```
+This onboarding path aims to provide a structured approach for beginners to learn and contribute to CrewAI. The stages are designed to progressively build upon your understanding and practical skills. Feel free to adapt this path based on your learning style and specific interests within the CrewAI framework.

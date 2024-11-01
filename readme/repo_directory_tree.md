@@ -1,8 +1,11 @@
-```prompt
-Generate a directory tree of the repo in ascii format 
-````
+**User Prompt**
 
-```response
+Generate a directory tree of the repo in ascii format 
+
+---
+
+**Gemini Response**
+
 Here is a directory tree in ASCII format that represents the repo:
 
 ```
@@ -116,4 +119,3 @@ The directory structure reveals:
 - **Telemetry:** The file `telemetry.py` suggests the framework includes features for collecting and analyzing data about crew performance and usage.
 
 The information provided in the sources is not sufficient to determine the programming language used for this project. 
-```
