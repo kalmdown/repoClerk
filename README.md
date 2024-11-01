@@ -67,7 +67,7 @@ You are now ready to talk with the repo. Here are a few example of interactions 
 ### Example1: Code implementation query
 
 <details open>
-<summary>
+<summary> Prompt / Response </summary>
 **prompt**
 
 Implement a random example of a crew of agents.
@@ -156,7 +156,7 @@ print(result)
 ```
 
 This example showcases the fundamental structure of creating a simple crew using the `crewai` framework. By defining roles, goals, and tasks for each agent, and configuring the `Crew` object, you can establish a basic multi-agent system for task automation.
-</summary>
+
 </details>
 
 ![alt text](readme/code_example.png "question1")
@@ -166,7 +166,8 @@ This example showcases the fundamental structure of creating a simple crew using
 ### Example2: New functionality
 
 <details open>
-<summary>
+<summary>Prompt / Response </summary>
+
 **prompt**
 
 I want each agent within my multi-agent setup to log their individual token usage during interactions. How can I implement this functionality to monitor and print each agent's token usage after every interaction? Additionally, where in the existing code should this feature be integrated for optimal tracking and minimal performance impact? Please provide guidance on which methods or modules would be most appropriate to modify or extend to capture token usage data effectively.
@@ -237,7 +238,6 @@ for agent in crew.agents:
 
 By combining the insights from the sources and the proposed implementation strategy, you should be able to enhance the CrewAI framework to provide more granular visibility into agent-level token usage, allowing for better resource monitoring and optimization. 
 
-</summary>
 </details>
 
 ![alt text](readme/new_functionality_crewai.png "question2")
