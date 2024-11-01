@@ -68,6 +68,7 @@ You are now ready to talk with the repo. Here are a few examples of interactions
 
 Implement a random example of a crew of agents.
 
+---
 
 **Gemini Response**
 
@@ -168,6 +169,7 @@ This example showcases the fundamental structure of creating a simple crew using
 
 I want each agent within my multi-agent setup to log their individual token usage during interactions. How can I implement this functionality to monitor and print each agent's token usage after every interaction? Additionally, where in the existing code should this feature be integrated for optimal tracking and minimal performance impact? Please provide guidance on which methods or modules would be most appropriate to modify or extend to capture token usage data effectively.
 
+---
 
 **Gemini Response**
 
