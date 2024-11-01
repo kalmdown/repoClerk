@@ -55,27 +55,26 @@ python repo_to_text.py --cfg <path -to-config-yaml-file> --repo_path <path-to-re
 python repo_concat.py --repo_path ./my_repo -w 100000 -o ./output --skip_patterns ".md" ".txt" --skip_dirs "tests" -v
 ```
 
-## Error Handling
 
-The script will print error messages for any files it cannot process due to encoding issues or other I/O errors, and it will skip those files.
-
-
-## Example: discussing with crewAI repo
+## Use case: discussion with the crewAI repo
 
 1. `git clone https://github.com/crewAIInc/crewAI.git`
-2. run text repoTotext code: `python repo_to_text.py --repo_path repos/crewai`
-3. Upload the files to **NotebookLM**
+2. run text repoTotext code: `python repo_to_text.py --cfg config.yaml --repo_path repos/crewai`
+3. Upload the files to **NotebookLM** [https://notebooklm.google.com/](https://notebooklm.google.com/)
 
 You are now ready to talk with the repo. Here are a few example of interactions nd response from NotebookLM
 
-- Code implementation query:
+### Example1: Code implementation query
+
 <details open>
-<summary>```prompt
+<summary>
+**prompt**
+
 Implement a random example of a crew of agents.
-```
 
 
-```response
+**response**
+
 Here is an example of a simple crew of agents, drawn from the provided sources:
 
 *   The example uses the `crewai` framework, specifically demonstrating how to create a basic crew with two agents: a `researcher` and a `writer`.
@@ -157,20 +156,24 @@ print(result)
 ```
 
 This example showcases the fundamental structure of creating a simple crew using the `crewai` framework. By defining roles, goals, and tasks for each agent, and configuring the `Crew` object, you can establish a basic multi-agent system for task automation.
-```</summary>
+</summary>
 </details>
+
 ![alt text](readme/code_example.png "question1")
 
 
 
-- New functionality:
+### Example2: New functionality
 
 <details open>
-<summary>```prompt
-I want each agent within my multi-agent setup to log their individual token usage during interactions. How can I implement this functionality to monitor and print each agent's token usage after every interaction? Additionally, where in the existing code should this feature be integrated for optimal tracking and minimal performance impact? Please provide guidance on which methods or modules would be most appropriate to modify or extend to capture token usage data effectively.
-```
+<summary>
+**prompt**
 
-```response
+I want each agent within my multi-agent setup to log their individual token usage during interactions. How can I implement this functionality to monitor and print each agent's token usage after every interaction? Additionally, where in the existing code should this feature be integrated for optimal tracking and minimal performance impact? Please provide guidance on which methods or modules would be most appropriate to modify or extend to capture token usage data effectively.
+
+
+**response**
+
 ## Tracking Token Usage for Individual Agents in CrewAI
 
 While the sources don't explicitly outline how to print the token usage of each agent individually, they do provide insights into how token usage is tracked and accessed within the CrewAI framework. Based on this information, we can devise a potential implementation strategy.
@@ -233,11 +236,8 @@ for agent in crew.agents:
 - The `TokenCalcHandler` class ([Source 2]) is used as a callback to track token usage during agent execution. This highlights how CrewAI integrates token tracking into its execution pipeline.
 
 By combining the insights from the sources and the proposed implementation strategy, you should be able to enhance the CrewAI framework to provide more granular visibility into agent-level token usage, allowing for better resource monitoring and optimization. 
-```</summary>
+
+</summary>
 </details>
 
 ![alt text](readme/new_functionality_crewai.png "question2")
-
-## Contributing
-
-Contributions are welcome! Please fork the repository and submit a pull request with your changes.
