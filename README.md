@@ -239,3 +239,29 @@ By combining the insights from the sources and the proposed implementation strat
 </details>
 
 ![alt text](readme/new_functionality_crewai.png "question2")
+
+
+# wav2vid: Generate a Video from an Image and Audio
+
+## Overview
+`wav2vid.py` is a Python script that generates a video using a fixed image and an audio file (WAV format), overlaying today's date on the image. The resulting video displays the image throughout the entire duration of the audio.
+
+## Features:
+
+- Overlays today's date on the input image.
+- Synchronizes the image display with the audio duration.
+- Outputs a high-quality video in MP4 format.
+
+## Usage
+
+1. Command:
+
+```python
+python wav2vid.py path/to/image.jpg path/to/audio.wav path/to/output_video.mp4
+```
+
+2. Example:
+
+```python
+python wav2vid.py sample_image.jpg background_audio.wav output_video.mp4
+```

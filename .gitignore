@@ -1,1 +1,6 @@
 repos/*
+downloads/*
+!downloads/.keepit
+podcasts/*
+!podcasts/.keepit
+!podcasts/podcast_bg.jpg
