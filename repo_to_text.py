@@ -68,7 +68,7 @@ class RepoContentProcessor:
 
     def count_words(self, text):
         """Count words in the given text using NLTK tokenizer"""
-        return len(word_tokenize(text))
+        return len(word_tokenize(text, language='english', preserve_line=True))
     
     def is_in_git_directory(self, path):
         """Check if the path is inside a .git directory"""
