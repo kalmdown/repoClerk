@@ -4,3 +4,6 @@ downloads/*
 podcasts/*
 !podcasts/.keepit
 !podcasts/podcast_bg.jpg
+.env
+repoTXTs/*
+!repoTXTs/.keepit
