@@ -76,21 +76,25 @@ class RepoContentProcessor:
         return '.git' in parts
     
     def should_skip_path(self, path):
-        """
-        Check if a path should be skipped
-        """
+        # Get parts of the relative path (e.g., ('node_modules', 'file.js'))
+        try:
+            relative_parts = path.relative_to(self.repo_path).parts
+        except ValueError:
+            # If path is not relative to repo_path, do not skip it.
+            relative_parts = ()
+
+        # Skip if any part of the path is in skip_dirs
+        if any(part in self.skip_dirs for part in relative_parts):
+            return True
+
         # Skip anything in .git directory
-        if self.is_in_git_directory(path):
+        if '.git' in relative_parts:
             return True
-            
-        # Skip directories in skip_dirs
-        if path.is_dir() and path.name in self.skip_dirs:
-            return True
-            
-        # Skip files matching patterns
+
+        # For files, also check if their own name matches any skip patterns.
         if path.is_file():
-            return any(fnmatch.fnmatch(path.name, pattern) 
-                      for pattern in self.skip_patterns)
+            if any(fnmatch.fnmatch(path.name, pattern) for pattern in self.skip_patterns):
+                return True
         
         return False
     
@@ -255,31 +259,31 @@ def validate_args(args):
 
 
 def main():
-    # Parse and validate arguments
-    args = parse_arguments()
     try:
+        # Parse and validate arguments
+        args = parse_arguments()
         validate_args(args)
-    except ValueError as e:
-        print(f"Error: {e}")
-        return 1
-    
-    # Change to output directory
-    os.chdir(str(args.output_dir))
-    
-    # Process the repository
-    try:
+
+        # except ValueError as e:
+        #     print(f"Error: {e}")
+        #     return 1
+
+        # Create the processor (which loads the config file)
         processor = RepoContentProcessor(args.repo_path, args.cfg, args.max_words)
-        
-        # Add any additional skip patterns from command line
+
+        # Now change to the output directory
+        os.chdir(str(args.output_dir))
+
+        # (Optionally update skip lists here, see below)
         if args.skip_patterns:
-            processor.skip_patterns.update(args.skip_patterns)
-        
-        # Add any additional skip directories from command line
+            # Use extend() if skip_patterns is a list
+            processor.skip_patterns.extend(args.skip_patterns)
         if args.skip_dirs:
-            processor.skip_dirs.update(args.skip_dirs)
-            
+            processor.skip_dirs.extend(args.skip_dirs)
+
         processor.process_repo()
         return 0
+
     except Exception as e:
         print(f"Error during processing: {e}")
         return 1
